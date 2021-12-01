@@ -176,6 +176,11 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Service\LiveMatchService" class="App\Service\LiveMatchService" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+    </service>
     <service id="App\Service\NotionService" class="App\Service\NotionService" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>

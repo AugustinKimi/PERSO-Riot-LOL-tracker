@@ -25,4 +25,12 @@ class DefaultController extends AbstractController
     {
         return $this->json('nope.');
     }
+
+    /**
+     * @Route("/live-match", name="live-match")
+     */
+    public function liveMatch(): Response
+    {
+        return $this->json('live match.');
+    }
 }

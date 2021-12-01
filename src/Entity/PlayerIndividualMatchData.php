@@ -128,7 +128,7 @@ class PlayerIndividualMatchData
     private $dommageTaken;
 
     /**
-     * @ORM\Column(type="int")
+     * @ORM\Column(type="integer")
      */
     private $healingDone;
 

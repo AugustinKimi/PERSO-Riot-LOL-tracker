@@ -10,6 +10,7 @@ return [
     [ // $staticRoutes
         '/' => [[['_route' => 'default', '_controller' => 'App\\Controller\\DefaultController::index'], null, null, null, false, false, null]],
         '/error' => [[['_route' => 'error', '_controller' => 'App\\Controller\\DefaultController::error'], null, null, null, false, false, null]],
+        '/live-match' => [[['_route' => 'live-match', '_controller' => 'App\\Controller\\DefaultController::liveMatch'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

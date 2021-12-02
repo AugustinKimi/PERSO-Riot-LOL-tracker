@@ -8,10 +8,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/live-match',
-            ],
-            'name' => [
-                'live-match',
+                '/live-match/{summonerName}',
             ],
         ],
     ],

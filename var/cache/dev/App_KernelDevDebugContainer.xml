@@ -34,7 +34,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="notion_base_url">%env(resolve:NOTION_BASE_URL)%</parameter>
+    <parameter key="riot_token">%env(resolve:RIOT_TOKEN)%</parameter>
     <parameter key="notion_token">%env(resolve:NOTION_TOKEN)%</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
@@ -160,6 +160,9 @@
     <service id="App\Controller\DefaultController" class="App\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Service\LiveMatchService"/>
+      <argument type="service" id="App\Service\UserGameHistoryService"/>
+      <argument type="service" id="App\Service\UserDataService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\DefaultController"/>
       </call>
@@ -180,11 +183,23 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>
       <argument type="service" id="parameter_bag"/>
+      <argument type="service" id="App\Service\UserDataService"/>
     </service>
     <service id="App\Service\NotionService" class="App\Service\NotionService" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>
       <argument type="service" id="parameter_bag"/>
+    </service>
+    <service id="App\Service\StoreItemsService" class="App\Service\StoreItemsService" autowire="true" autoconfigure="true"/>
+    <service id="App\Service\StoreRunesService" class="App\Service\StoreRunesService" autowire="true" autoconfigure="true"/>
+    <service id="App\Service\UserDataService" class="App\Service\UserDataService" autowire="true" autoconfigure="true">
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+    </service>
+    <service id="App\Service\UserGameHistoryService" class="App\Service\UserGameHistoryService" autowire="true" autoconfigure="true">
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+      <argument type="service" id="App\Service\UserDataService"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">

@@ -6,6 +6,7 @@ namespace App\Service;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use App\Service\UserDataService;
 
 
 
@@ -26,13 +27,39 @@ class LiveMatchService{
      */
     private $parameterBag;
 
+     /**
+     * @var UserDataService
+     */
+    private $userData;
+
     public function __construct(
         EntityManagerInterface $entityManager,
         HttpClientInterface $httpClient,
-        ParameterBagInterface $parameterBag
+        ParameterBagInterface $parameterBag,
+        UserDataService $userData
     ) {
         $this->entityManager = $entityManager;
         $this->httpClient = $httpClient;
         $this->parameterBag = $parameterBag;
+        $this->userData = $userData;
     }
+
+
+    public function getLiveMatchData(string $summonerName){
+        $liveMatchUrl = "https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner";
+        $summonerId = $this->userData->getUserIds($summonerName)['id'];
+        $riotToken = $this->parameterBag->get('riot_token');
+
+        $riotSearchUrl = sprintf('%s/%s', $liveMatchUrl, $summonerId);
+        var_dump($riotSearchUrl);
+        $matchData = $this->httpClient->request('GET', $riotSearchUrl, [
+            'headers' => [
+                'X-Riot-Token' => $riotToken,
+            ],
+        ]);
+        // var_dump($matchData->toArray());
+
+        // return $matchData ;
+    }
+
 }

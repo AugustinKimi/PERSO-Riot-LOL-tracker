@@ -41,14 +41,21 @@ class UserGameHistoryService{
         $riotToken = $this->parameterBag->get('riot_token');
             
         $userGameHistoryUrl = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid";
+        if(!isset($this->userData->getUserIds($summonerName)['puuid'])){
+            return ["success" => false];
+        }
         $userPuuid = $this->userData->getUserIds($summonerName)['puuid'];
 
-        $searchGameHistoryUrl = sprintf('%s/%s/%s', $userGameHistoryUrl, $userPuuid, 'ids');
+        $searchGameHistoryUrl = sprintf('%s/%s/%s', $userGameHistoryUrl, $userPuuid, 'ids?count=10');
 
         $gameHistory = $this->httpClient->request('GET', $searchGameHistoryUrl , [
             'headers' => [
                 "X-Riot-Token" =>$riotToken
             ]]);
+        if($gameHistory->getStatusCode() != 200){
+            return ["success" => false];
+        }
+
         $gameHistoryArray = $gameHistory->toArray();
 
         $gameHistoryDataArray = [];

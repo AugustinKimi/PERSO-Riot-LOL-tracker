@@ -163,15 +163,24 @@
       <argument type="service" id="App\Service\LiveMatchService"/>
       <argument type="service" id="App\Service\UserGameHistoryService"/>
       <argument type="service" id="App\Service\UserDataService"/>
+      <argument type="service" id="App\Service\StoreItemsService"/>
+      <argument type="service" id="App\Service\StoreChampionService"/>
+      <argument type="service" id="App\Service\Last10GamesStatsService"/>
+      <argument type="service" id="App\Service\SignUpService"/>
+      <argument type="service" id="App\Service\LoginService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\DefaultController"/>
       </call>
     </service>
-    <service id="App\Repository\PlayerIndividualMatchDataRepository" class="App\Repository\PlayerIndividualMatchDataRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\ChampionRepository" class="App\Repository\ChampionRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\UserGameHistoryRepository" class="App\Repository\UserGameHistoryRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\ItemsRepository" class="App\Repository\ItemsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\Top3ChampionsRepository" class="App\Repository\Top3ChampionsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -179,19 +188,44 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\UserStatsRepository" class="App\Repository\UserStatsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Service\BestItemsetService" class="App\Service\BestItemsetService" autowire="true" autoconfigure="true">
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+      <argument type="service" id="App\Service\UserDataService"/>
+    </service>
+    <service id="App\Service\Last10GamesStatsService" class="App\Service\Last10GamesStatsService" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Service\UserGameHistoryService"/>
+    </service>
     <service id="App\Service\LiveMatchService" class="App\Service\LiveMatchService" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>
       <argument type="service" id="parameter_bag"/>
       <argument type="service" id="App\Service\UserDataService"/>
     </service>
+    <service id="App\Service\LoginService" class="App\Service\LoginService" autowire="true" autoconfigure="true"/>
     <service id="App\Service\NotionService" class="App\Service\NotionService" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>
       <argument type="service" id="parameter_bag"/>
     </service>
-    <service id="App\Service\StoreItemsService" class="App\Service\StoreItemsService" autowire="true" autoconfigure="true"/>
-    <service id="App\Service\StoreRunesService" class="App\Service\StoreRunesService" autowire="true" autoconfigure="true"/>
+    <service id="App\Service\SignUpService" class="App\Service\SignUpService" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Service\UserDataService"/>
+    </service>
+    <service id="App\Service\StoreChampionService" class="App\Service\StoreChampionService" autowire="true" autoconfigure="true">
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Service\StoreItemsService" class="App\Service\StoreItemsService" autowire="true" autoconfigure="true">
+      <argument type="service" id="http_client"/>
+      <argument type="service" id="parameter_bag"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Service\UserDataService" class="App\Service\UserDataService" autowire="true" autoconfigure="true">
       <argument type="service" id="http_client"/>
       <argument type="service" id="parameter_bag"/>
@@ -1747,7 +1781,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.lE1zAaT"/>
+      <argument type="service" id=".service_locator.EGr160z"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -2145,12 +2179,16 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PlayerIndividualMatchDataRepository" class="App\Repository\PlayerIndividualMatchDataRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\PlayerIndividualMatchDataRepository" class="App\Repository\PlayerIndividualMatchDataRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserGameHistoryRepository" class="App\Repository\UserGameHistoryRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\UserGameHistoryRepository" class="App\Repository\UserGameHistoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ChampionRepository" class="App\Repository\ChampionRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ChampionRepository" class="App\Repository\ChampionRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ItemsRepository" class="App\Repository\ItemsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ItemsRepository" class="App\Repository\ItemsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Top3ChampionsRepository" class="App\Repository\Top3ChampionsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Top3ChampionsRepository" class="App\Repository\Top3ChampionsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserStatsRepository" class="App\Repository\UserStatsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserStatsRepository" class="App\Repository\UserStatsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.0GV1BZZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -2537,12 +2575,14 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.lE1zAaT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.EGr160z" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\PlayerIndividualMatchDataRepository" type="service_closure" id="App\Repository\PlayerIndividualMatchDataRepository"/>
-        <argument key="App\Repository\UserGameHistoryRepository" type="service_closure" id="App\Repository\UserGameHistoryRepository"/>
+        <argument key="App\Repository\ChampionRepository" type="service_closure" id="App\Repository\ChampionRepository"/>
+        <argument key="App\Repository\ItemsRepository" type="service_closure" id="App\Repository\ItemsRepository"/>
+        <argument key="App\Repository\Top3ChampionsRepository" type="service_closure" id="App\Repository\Top3ChampionsRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\UserStatsRepository" type="service_closure" id="App\Repository\UserStatsRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">

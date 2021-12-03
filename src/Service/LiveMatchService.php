@@ -47,19 +47,25 @@ class LiveMatchService{
 
     public function getLiveMatchData(string $summonerName){
         $liveMatchUrl = "https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner";
-        $summonerId = $this->userData->getUserIds($summonerName)['id'];
         $riotToken = $this->parameterBag->get('riot_token');
 
+        if(!isset($this->userData->getUserIds($summonerName)['id'])){
+            return ["success" => false];
+        }
+        $summonerId = $this->userData->getUserIds($summonerName)['id'];
         $riotSearchUrl = sprintf('%s/%s', $liveMatchUrl, $summonerId);
-        var_dump($riotSearchUrl);
         $matchData = $this->httpClient->request('GET', $riotSearchUrl, [
             'headers' => [
                 'X-Riot-Token' => $riotToken,
             ],
         ]);
+        if($matchData->getStatusCode() != 200){
+            return ["success" => false];
+        }
+        // var_dump($riotSearchUrl);
         // var_dump($matchData->toArray());
 
-        // return $matchData ;
+        return $matchData->toArray() ;
     }
 
 }

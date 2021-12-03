@@ -40,17 +40,7 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $profilIconId;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $summonerLevel;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $accessToken;
+    private $password;
 
     public function getId(): ?int
     {
@@ -95,48 +85,24 @@ class User
 
     public function getSummonerName(): ?string
     {
-        return $this->summonerName;
+        return $this->su�mmonerNAame;
     }
 
-    public function setSummonerName(string $summonerName): self
+    public function setSummonerName(string $su�mmonerNAame): self
     {
-        $this->summonerName = $summonerName;
+        $this->su�mmonerNAame = $su�mmonerNAame;
 
         return $this;
     }
 
-    public function getProfilIconId(): ?string
+    public function getPassword(): ?string
     {
-        return $this->profilIconId;
+        return $this->password;
     }
 
-    public function setProfilIconId(string $profilIconId): self
+    public function setPassword(string $password): self
     {
-        $this->profilIconId = $profilIconId;
-
-        return $this;
-    }
-
-    public function getSummonerLevel(): ?int
-    {
-        return $this->summonerLevel;
-    }
-
-    public function setSummonerLevel(int $summonerLevel): self
-    {
-        $this->summonerLevel = $summonerLevel;
-
-        return $this;
-    }
-
-    public function getAccessToken(): ?string
-    {
-        return $this->accessToken;
-    }
-
-    public function setAccessToken(string $accessToken): self
-    {
-        $this->accessToken = $accessToken;
+        $this->password = $password;
 
         return $this;
     }

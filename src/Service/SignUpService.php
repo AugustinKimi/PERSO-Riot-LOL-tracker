@@ -29,12 +29,18 @@ class SignUpService{
     public function signUpUser($summonerName, $password){
 
 
-        if(strlen($password) < 6){
+        if(strlen($password) < 3){
             return ["success" => false];
         }
         $userIds = $this->userData->getUserIds($summonerName);
         if(!$userIds["success"]){
-            return ["success" => false, "message" => "Cette compte League of Legends n'existe pas en EUW"];
+            return ["success" => false, "message" => "Ce compte League of Legends n'existe pas en EUW"];
+        }
+
+        $existingUser = $this->entityManager->getRepository(User::class)->findOneByAccountId($userIds["accountId"]);
+
+        if($existingUser != null){
+            return ["success" => false, "message" => "Ce compte est déja enregistré"];
         }
 
         $user = new User();
@@ -43,7 +49,7 @@ class SignUpService{
             ->setAccountId($userIds["accountId"])
             ->setPuuid($userIds["puuid"])
             ->setSummonerName($summonerName)
-            ->setPassword($password);
+            ->setPassword(password_hash($password, PASSWORD_DEFAULT));
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();

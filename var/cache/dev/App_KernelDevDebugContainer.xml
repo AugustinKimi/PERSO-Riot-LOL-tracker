@@ -192,11 +192,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Service\BestItemsetService" class="App\Service\BestItemsetService" autowire="true" autoconfigure="true">
-      <argument type="service" id="http_client"/>
-      <argument type="service" id="parameter_bag"/>
-      <argument type="service" id="App\Service\UserDataService"/>
-    </service>
     <service id="App\Service\Last10GamesStatsService" class="App\Service\Last10GamesStatsService" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Service\UserGameHistoryService"/>
     </service>
@@ -206,7 +201,9 @@
       <argument type="service" id="parameter_bag"/>
       <argument type="service" id="App\Service\UserDataService"/>
     </service>
-    <service id="App\Service\LoginService" class="App\Service\LoginService" autowire="true" autoconfigure="true"/>
+    <service id="App\Service\LoginService" class="App\Service\LoginService" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Service\NotionService" class="App\Service\NotionService" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="http_client"/>

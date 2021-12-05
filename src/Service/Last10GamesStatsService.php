@@ -23,7 +23,6 @@ class Last10GamesStatsService{
 
     public function getStats($summonerName){
         $lastMatchs = $this->userGameHistory->getUserGameHistory($summonerName);
-        // var_dump($lastMatchs);
         $wins = 0;
         $loses = 0;
         $lanes = [];
@@ -39,34 +38,100 @@ class Last10GamesStatsService{
                     $damageDealt  += $participantStats["totalDamageDealtToChampions"];
         
                     $lanes[] = [
-                        "laneName" => $participantStats["lane"],
+                        "name" => $participantStats["lane"],
                         "win" => $participantStats["win"],
-                        "cs" => $participantStats["totalMinionsKilled"]
+                        "cs" => $participantStats["totalMinionsKilled"],
+                        "dmgDealt" => $participantStats["totalDamageDealtToChampions"]
                     ];
         
                     $champions[] = [
-                        "championName" => $participantStats["championName"],
+                        "name" => $participantStats["championName"],
                         "win" => $participantStats["win"],
                         "kills" => $participantStats["kills"],
                         "deaths" =>$participantStats["deaths"] ,
                         "assists" => $participantStats["assists"],
-                        "cs" => $participantStats["totalMinionsKilled"]
+                        "cs" => $participantStats["totalMinionsKilled"],
+                        "dmgDealt" => $participantStats["totalDamageDealtToChampions"]
                     ];
                 }
             }
         }
 
-        
-        foreach ($lanes as $lane) {
-            var_dump($lane);
-        }
+       
+
+        $lanesArray = $this->sortMostPlayed($lanes);
+        $championsArray = $this->sortMostPlayed($champions);
+
 
         $minionsKilled = $minionsKilled/10;
         $damageDealt = $damageDealt/10;
 
+        $mostPlayedChampions = [
+            $championsArray[0],
+            $championsArray[1],
+            $championsArray[2],
+        ];
 
-        var_dump($wins, $loses, $minionsKilled, $damageDealt,  $lanes, $champions);
-        return $lastMatchs;
+        $mostPlayedLanes = [
+            $lanesArray[0],
+            $lanesArray[1]
+        ];
+
+        $returnDataArray = [
+            "wins" => $wins,
+            "loses" => $loses,
+            "averageCs" => $minionsKilled,
+            "averageDmgDealt" => $damageDealt,
+            "mostPlayedLanes" => $mostPlayedLanes,
+            "mostPlayedChampions" => $mostPlayedChampions
+        ];
+
+        return $returnDataArray;
+    }
+
+    public function sortMostPlayed($array){
+        $newArray = [];
+        foreach ($array as $item) {
+            if(array_key_exists($item["name"], $newArray)){
+                $newArray[$item["name"]]["count"] += 1 ;
+                $newArray[$item["name"]]["averageCs"] += $item["cs"] ;
+                $newArray[$item["name"]]["dmgDealt"] += $item["dmgDealt"] ;
+                if($item["win"]) $newArray[$item["name"]]["winCount"] += 1 ;
+            }
+            else {
+                // $newArray[$item["name"]]["count"] = 1;
+                // $newArray[$item["name"]]["cs"] = $item["cs"] ;
+                // if($item["win"]) $newArray[$item["name"]]["winCount"] = 1;
+                // else  $newArray[$item["name"]]["winCount"] = 0;
+                if($item['win']) $newArray[$item["name"]] = array_merge(
+                    $item, [
+                    "averageCs" =>  $item["cs"],
+                    "dmgDealt" =>  $item["dmgDealt"],
+                    "count" => 1,
+                    "winCount" => 1,
+                    "name" => $item["name"],
+
+                ]);
+                else $newArray[$item["name"]] = array_merge(
+                    $item, [
+                    "averageCs" =>  $item["cs"],
+                    "dmgDealt" =>  $item["dmgDealt"],
+                    "count" => 1,
+                    "winCount" => 0,
+                    "name" => $item["name"],
+                ]);
+            }
+        }
+        foreach ($newArray as $key => $item) {
+            $newArray[$key]["averageCs"] =  $item["averageCs"]/ $item["count"];
+            $newArray[$key]["winRatio"] =  $item["winCount"]/ $item["count"];
+            $newArray[$key]["dmgDealt"] =  $item["dmgDealt"]/ $item["count"];
+        }
+
+        usort($newArray, function($a, $b) {
+            return $b['count'] <=> $a['count'];
+        }); 
+        return $newArray;
     }
 
 }

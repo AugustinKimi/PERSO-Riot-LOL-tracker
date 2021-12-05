@@ -85,12 +85,12 @@ class User
 
     public function getSummonerName(): ?string
     {
-        return $this->su�mmonerNAame;
+        return $this->summonerName;
     }
 
-    public function setSummonerName(string $su�mmonerNAame): self
+    public function setSummonerName(string $summonerName): self
     {
-        $this->su�mmonerNAame = $su�mmonerNAame;
+        $this->summonerName = $summonerName;
 
         return $this;
     }

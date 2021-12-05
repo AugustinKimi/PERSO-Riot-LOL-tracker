@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 
 class LoginService{
@@ -9,14 +10,25 @@ class LoginService{
     /**
      * @var EntityManagerInterface
      */
+    private $entityManager;
 
-    public function __construc(
+    public function __construct(
         EntityManagerInterface $entityManager
     ){
         $this->entityManager = $entityManager;
     }
 
     public function logUser($summonerName, $password){
-        return ["summonerName" => $summonerName , "password" => $password, "success" => true];
+        $existingUser = $this->entityManager->getRepository(User::class)->findOneBySummonerName($summonerName);
+
+        if(!$existingUser){
+            return ["success" => false];
+        }
+        if(!password_verify($password, $existingUser->getPassword())){
+            return ["success" => false];
+        }
+
+
+        return ["summonerName" => $summonerName , "success" => true];
     } 
 }

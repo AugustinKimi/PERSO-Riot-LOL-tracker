@@ -10,6 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
+<<<<<<< HEAD
 require __DIR__.'/ContainerGj18x04/App_KernelDevDebugContainer.php';
 require __DIR__.'/ContainerGj18x04/EntityManager_9a5be93.php';
 require __DIR__.'/ContainerGj18x04/getSessionService.php';
@@ -56,6 +57,54 @@ require __DIR__.'/ContainerGj18x04/get_ServiceLocator_KfwZsneService.php';
 require __DIR__.'/ContainerGj18x04/get_ServiceLocator_KfbR3DYService.php';
 require __DIR__.'/ContainerGj18x04/get_Container_Private_FilesystemService.php';
 require __DIR__.'/ContainerGj18x04/get_Container_Private_CacheClearerService.php';
+=======
+require __DIR__.'/ContainerJUdyxXN/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerJUdyxXN/EntityManager_9a5be93.php';
+require __DIR__.'/ContainerJUdyxXN/getSessionService.php';
+require __DIR__.'/ContainerJUdyxXN/getServicesResetterService.php';
+require __DIR__.'/ContainerJUdyxXN/getSecrets_VaultService.php';
+require __DIR__.'/ContainerJUdyxXN/getRouting_LoaderService.php';
+require __DIR__.'/ContainerJUdyxXN/getErrorControllerService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_UuidGeneratorService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_UlidGeneratorService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Orm_Listeners_PdoCacheAdapterDoctrineSchemaSubscriberService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Orm_Listeners_DoctrineTokenProviderSchemaSubscriberService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Orm_DefaultListeners_AttachEntityListenersService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Orm_DefaultEntityManagerService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Orm_DefaultAnnotationMetadataDriverService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrine_Dbal_DefaultConnectionService.php';
+require __DIR__.'/ContainerJUdyxXN/getDoctrineService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_VariadicService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_SessionService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_ServiceService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_RequestAttributeService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_RequestService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_NotTaggedControllerService.php';
+require __DIR__.'/ContainerJUdyxXN/getDebug_ArgumentResolver_DefaultService.php';
+require __DIR__.'/ContainerJUdyxXN/getContainer_EnvVarProcessorsLocatorService.php';
+require __DIR__.'/ContainerJUdyxXN/getContainer_EnvVarProcessorService.php';
+require __DIR__.'/ContainerJUdyxXN/getCache_SystemClearerService.php';
+require __DIR__.'/ContainerJUdyxXN/getCache_SystemService.php';
+require __DIR__.'/ContainerJUdyxXN/getCache_GlobalClearerService.php';
+require __DIR__.'/ContainerJUdyxXN/getCache_AppClearerService.php';
+require __DIR__.'/ContainerJUdyxXN/getCache_AppService.php';
+require __DIR__.'/ContainerJUdyxXN/getAnnotations_ReaderService.php';
+require __DIR__.'/ContainerJUdyxXN/getAnnotations_CachedReaderService.php';
+require __DIR__.'/ContainerJUdyxXN/getTemplateControllerService.php';
+require __DIR__.'/ContainerJUdyxXN/getRedirectControllerService.php';
+require __DIR__.'/ContainerJUdyxXN/getUserStatsRepositoryService.php';
+require __DIR__.'/ContainerJUdyxXN/getUserRepositoryService.php';
+require __DIR__.'/ContainerJUdyxXN/getTop3ChampionsRepositoryService.php';
+require __DIR__.'/ContainerJUdyxXN/getItemsRepositoryService.php';
+require __DIR__.'/ContainerJUdyxXN/getChampionRepositoryService.php';
+require __DIR__.'/ContainerJUdyxXN/getDefaultControllerService.php';
+require __DIR__.'/ContainerJUdyxXN/get_Session_DeprecatedService.php';
+require __DIR__.'/ContainerJUdyxXN/get_ServiceLocator_YxNo8ZPService.php';
+require __DIR__.'/ContainerJUdyxXN/get_ServiceLocator_KfwZsneService.php';
+require __DIR__.'/ContainerJUdyxXN/get_ServiceLocator_KfbR3DYService.php';
+require __DIR__.'/ContainerJUdyxXN/get_Container_Private_FilesystemService.php';
+require __DIR__.'/ContainerJUdyxXN/get_Container_Private_CacheClearerService.php';
+>>>>>>> 17b41e6ae488ec062dd44ef8d6ce4ddaa6c456e0
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';

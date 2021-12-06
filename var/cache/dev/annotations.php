@@ -64,10 +64,334 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
 'App%5CController%5CDefaultController' => 0,
 '[C]App%5CController%5CDefaultController' => 1,
+'App%5CController%5CDefaultController%23__construct' => 0,
+'[C]App%5CController%5CDefaultController%23__construct' => 1,
 'App%5CController%5CDefaultController%23index' => 2,
 '[C]App%5CController%5CDefaultController%23index' => 1,
 'App%5CController%5CDefaultController%23error' => 3,
 '[C]App%5CController%5CDefaultController%23error' => 1,
+'App%5CController%5CDefaultController%23liveMatch' => 4,
+'[C]App%5CController%5CDefaultController%23liveMatch' => 1,
+'App%5CController%5CDefaultController%23gameHistory' => 5,
+'[C]App%5CController%5CDefaultController%23gameHistory' => 1,
+'App%5CController%5CDefaultController%23gameDetails' => 6,
+'[C]App%5CController%5CDefaultController%23gameDetails' => 1,
+'App%5CController%5CDefaultController%23userData' => 7,
+'[C]App%5CController%5CDefaultController%23userData' => 1,
+'App%5CController%5CDefaultController%23storeItems' => 8,
+'[C]App%5CController%5CDefaultController%23storeItems' => 1,
+'App%5CController%5CDefaultController%23storeChampions' => 9,
+'[C]App%5CController%5CDefaultController%23storeChampions' => 1,
+'App%5CController%5CDefaultController%23lastGamesStats' => 10,
+'[C]App%5CController%5CDefaultController%23lastGamesStats' => 1,
+'App%5CController%5CDefaultController%23login' => 11,
+'[C]App%5CController%5CDefaultController%23login' => 1,
+'App%5CController%5CDefaultController%23signup' => 12,
+'[C]App%5CController%5CDefaultController%23signup' => 1,
+'App%5CController%5CDefaultController%23createItemset' => 13,
+'[C]App%5CController%5CDefaultController%23createItemset' => 1,
+'App%5CController%5CDefaultController%23deleteItemset' => 14,
+'[C]App%5CController%5CDefaultController%23deleteItemset' => 1,
+'App%5CController%5CDefaultController%23getChampionItemset' => 15,
+'[C]App%5CController%5CDefaultController%23getChampionItemset' => 1,
+'App%5CController%5CDefaultController%23getAllItemsets' => 16,
+'[C]App%5CController%5CDefaultController%23getAllItemsets' => 1,
+'App%5CController%5CDefaultController%24liveMatchService' => 0,
+'[C]App%5CController%5CDefaultController%24liveMatchService' => 1,
+'App%5CController%5CDefaultController%24userGameHistory' => 0,
+'[C]App%5CController%5CDefaultController%24userGameHistory' => 1,
+'App%5CController%5CDefaultController%24userData' => 0,
+'[C]App%5CController%5CDefaultController%24userData' => 1,
+'App%5CController%5CDefaultController%24storeItems' => 0,
+'[C]App%5CController%5CDefaultController%24storeItems' => 1,
+'App%5CController%5CDefaultController%24storeChampion' => 0,
+'[C]App%5CController%5CDefaultController%24storeChampion' => 1,
+'App%5CController%5CDefaultController%24lastGames' => 0,
+'[C]App%5CController%5CDefaultController%24lastGames' => 1,
+'App%5CController%5CDefaultController%24signUp' => 0,
+'[C]App%5CController%5CDefaultController%24signUp' => 1,
+'App%5CController%5CDefaultController%24login' => 0,
+'[C]App%5CController%5CDefaultController%24login' => 1,
+'App%5CController%5CDefaultController%24itemSet' => 0,
+'[C]App%5CController%5CDefaultController%24itemSet' => 1,
+'App%5CEntity%5CChampion' => 17,
+'[C]App%5CEntity%5CChampion' => 1,
+'App%5CEntity%5CChampion%23__construct' => 0,
+'[C]App%5CEntity%5CChampion%23__construct' => 1,
+'App%5CEntity%5CChampion%23getId' => 0,
+'[C]App%5CEntity%5CChampion%23getId' => 1,
+'App%5CEntity%5CChampion%23getChampionId' => 0,
+'[C]App%5CEntity%5CChampion%23getChampionId' => 1,
+'App%5CEntity%5CChampion%23setChampionId' => 0,
+'[C]App%5CEntity%5CChampion%23setChampionId' => 1,
+'App%5CEntity%5CChampion%23getChampionName' => 0,
+'[C]App%5CEntity%5CChampion%23getChampionName' => 1,
+'App%5CEntity%5CChampion%23setChampionName' => 0,
+'[C]App%5CEntity%5CChampion%23setChampionName' => 1,
+'App%5CEntity%5CChampion%23getItemSet' => 0,
+'[C]App%5CEntity%5CChampion%23getItemSet' => 1,
+'App%5CEntity%5CChampion%23addItemSet' => 0,
+'[C]App%5CEntity%5CChampion%23addItemSet' => 1,
+'App%5CEntity%5CChampion%23removeItemSet' => 0,
+'[C]App%5CEntity%5CChampion%23removeItemSet' => 1,
+'App%5CEntity%5CChampion%24id' => 18,
+'[C]App%5CEntity%5CChampion%24id' => 1,
+'App%5CEntity%5CChampion%24championId' => 19,
+'[C]App%5CEntity%5CChampion%24championId' => 1,
+'App%5CEntity%5CChampion%24championName' => 20,
+'[C]App%5CEntity%5CChampion%24championName' => 1,
+'App%5CEntity%5CChampion%24itemSet' => 21,
+'[C]App%5CEntity%5CChampion%24itemSet' => 1,
+'App%5CEntity%5CItemSet' => 22,
+'[C]App%5CEntity%5CItemSet' => 1,
+'App%5CEntity%5CItemSet%23getId' => 0,
+'[C]App%5CEntity%5CItemSet%23getId' => 1,
+'App%5CEntity%5CItemSet%23getItemId1' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId1' => 1,
+'App%5CEntity%5CItemSet%23setItemId1' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId1' => 1,
+'App%5CEntity%5CItemSet%23getItemId2' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId2' => 1,
+'App%5CEntity%5CItemSet%23setItemId2' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId2' => 1,
+'App%5CEntity%5CItemSet%23getItemId3' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId3' => 1,
+'App%5CEntity%5CItemSet%23setItemId3' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId3' => 1,
+'App%5CEntity%5CItemSet%23getItemId4' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId4' => 1,
+'App%5CEntity%5CItemSet%23setItemId4' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId4' => 1,
+'App%5CEntity%5CItemSet%23getItemId5' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId5' => 1,
+'App%5CEntity%5CItemSet%23setItemId5' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId5' => 1,
+'App%5CEntity%5CItemSet%23getItemId6' => 0,
+'[C]App%5CEntity%5CItemSet%23getItemId6' => 1,
+'App%5CEntity%5CItemSet%23setItemId6' => 0,
+'[C]App%5CEntity%5CItemSet%23setItemId6' => 1,
+'App%5CEntity%5CItemSet%23getUser' => 0,
+'[C]App%5CEntity%5CItemSet%23getUser' => 1,
+'App%5CEntity%5CItemSet%23setUser' => 0,
+'[C]App%5CEntity%5CItemSet%23setUser' => 1,
+'App%5CEntity%5CItemSet%23getChampionId' => 0,
+'[C]App%5CEntity%5CItemSet%23getChampionId' => 1,
+'App%5CEntity%5CItemSet%23setChampionId' => 0,
+'[C]App%5CEntity%5CItemSet%23setChampionId' => 1,
+'App%5CEntity%5CItemSet%23getChampion' => 0,
+'[C]App%5CEntity%5CItemSet%23getChampion' => 1,
+'App%5CEntity%5CItemSet%23setChampion' => 0,
+'[C]App%5CEntity%5CItemSet%23setChampion' => 1,
+'App%5CEntity%5CItemSet%23getDescription' => 0,
+'[C]App%5CEntity%5CItemSet%23getDescription' => 1,
+'App%5CEntity%5CItemSet%23setDescription' => 0,
+'[C]App%5CEntity%5CItemSet%23setDescription' => 1,
+'App%5CEntity%5CItemSet%23getName' => 0,
+'[C]App%5CEntity%5CItemSet%23getName' => 1,
+'App%5CEntity%5CItemSet%23setName' => 0,
+'[C]App%5CEntity%5CItemSet%23setName' => 1,
+'App%5CEntity%5CItemSet%24id' => 18,
+'[C]App%5CEntity%5CItemSet%24id' => 1,
+'App%5CEntity%5CItemSet%24itemId1' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId1' => 1,
+'App%5CEntity%5CItemSet%24itemId2' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId2' => 1,
+'App%5CEntity%5CItemSet%24itemId3' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId3' => 1,
+'App%5CEntity%5CItemSet%24itemId4' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId4' => 1,
+'App%5CEntity%5CItemSet%24itemId5' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId5' => 1,
+'App%5CEntity%5CItemSet%24itemId6' => 19,
+'[C]App%5CEntity%5CItemSet%24itemId6' => 1,
+'App%5CEntity%5CItemSet%24user' => 23,
+'[C]App%5CEntity%5CItemSet%24user' => 1,
+'App%5CEntity%5CItemSet%24championId' => 19,
+'[C]App%5CEntity%5CItemSet%24championId' => 1,
+'App%5CEntity%5CItemSet%24champion' => 24,
+'[C]App%5CEntity%5CItemSet%24champion' => 1,
+'App%5CEntity%5CItemSet%24description' => 25,
+'[C]App%5CEntity%5CItemSet%24description' => 1,
+'App%5CEntity%5CItemSet%24name' => 20,
+'[C]App%5CEntity%5CItemSet%24name' => 1,
+'App%5CEntity%5CItems' => 26,
+'[C]App%5CEntity%5CItems' => 1,
+'App%5CEntity%5CItems%23getId' => 0,
+'[C]App%5CEntity%5CItems%23getId' => 1,
+'App%5CEntity%5CItems%23getName' => 0,
+'[C]App%5CEntity%5CItems%23getName' => 1,
+'App%5CEntity%5CItems%23setName' => 0,
+'[C]App%5CEntity%5CItems%23setName' => 1,
+'App%5CEntity%5CItems%23getDescription' => 0,
+'[C]App%5CEntity%5CItems%23getDescription' => 1,
+'App%5CEntity%5CItems%23setDescription' => 0,
+'[C]App%5CEntity%5CItems%23setDescription' => 1,
+'App%5CEntity%5CItems%23getPlainText' => 0,
+'[C]App%5CEntity%5CItems%23getPlainText' => 1,
+'App%5CEntity%5CItems%23setPlainText' => 0,
+'[C]App%5CEntity%5CItems%23setPlainText' => 1,
+'App%5CEntity%5CItems%23getTotalPrice' => 0,
+'[C]App%5CEntity%5CItems%23getTotalPrice' => 1,
+'App%5CEntity%5CItems%23setTotalPrice' => 0,
+'[C]App%5CEntity%5CItems%23setTotalPrice' => 1,
+'App%5CEntity%5CItems%23getBasePrice' => 0,
+'[C]App%5CEntity%5CItems%23getBasePrice' => 1,
+'App%5CEntity%5CItems%23setBasePrice' => 0,
+'[C]App%5CEntity%5CItems%23setBasePrice' => 1,
+'App%5CEntity%5CItems%23getSellPrice' => 0,
+'[C]App%5CEntity%5CItems%23getSellPrice' => 1,
+'App%5CEntity%5CItems%23setSellPrice' => 0,
+'[C]App%5CEntity%5CItems%23setSellPrice' => 1,
+'App%5CEntity%5CItems%23getImageUrl' => 0,
+'[C]App%5CEntity%5CItems%23getImageUrl' => 1,
+'App%5CEntity%5CItems%23setImageUrl' => 0,
+'[C]App%5CEntity%5CItems%23setImageUrl' => 1,
+'App%5CEntity%5CItems%23getItemId' => 0,
+'[C]App%5CEntity%5CItems%23getItemId' => 1,
+'App%5CEntity%5CItems%23setItemId' => 0,
+'[C]App%5CEntity%5CItems%23setItemId' => 1,
+'App%5CEntity%5CItems%24id' => 18,
+'[C]App%5CEntity%5CItems%24id' => 1,
+'App%5CEntity%5CItems%24name' => 20,
+'[C]App%5CEntity%5CItems%24name' => 1,
+'App%5CEntity%5CItems%24description' => 25,
+'[C]App%5CEntity%5CItems%24description' => 1,
+'App%5CEntity%5CItems%24plainText' => 25,
+'[C]App%5CEntity%5CItems%24plainText' => 1,
+'App%5CEntity%5CItems%24totalPrice' => 19,
+'[C]App%5CEntity%5CItems%24totalPrice' => 1,
+'App%5CEntity%5CItems%24basePrice' => 19,
+'[C]App%5CEntity%5CItems%24basePrice' => 1,
+'App%5CEntity%5CItems%24sellPrice' => 19,
+'[C]App%5CEntity%5CItems%24sellPrice' => 1,
+'App%5CEntity%5CItems%24imageUrl' => 20,
+'[C]App%5CEntity%5CItems%24imageUrl' => 1,
+'App%5CEntity%5CItems%24itemId' => 19,
+'[C]App%5CEntity%5CItems%24itemId' => 1,
+'App%5CEntity%5CTop3Champions' => 27,
+'[C]App%5CEntity%5CTop3Champions' => 1,
+'App%5CEntity%5CTop3Champions%23getId' => 0,
+'[C]App%5CEntity%5CTop3Champions%23getId' => 1,
+'App%5CEntity%5CTop3Champions%23getChamopionName' => 0,
+'[C]App%5CEntity%5CTop3Champions%23getChamopionName' => 1,
+'App%5CEntity%5CTop3Champions%23setChamopionName' => 0,
+'[C]App%5CEntity%5CTop3Champions%23setChamopionName' => 1,
+'App%5CEntity%5CTop3Champions%23getMasteryLevel' => 0,
+'[C]App%5CEntity%5CTop3Champions%23getMasteryLevel' => 1,
+'App%5CEntity%5CTop3Champions%23setMasteryLevel' => 0,
+'[C]App%5CEntity%5CTop3Champions%23setMasteryLevel' => 1,
+'App%5CEntity%5CTop3Champions%23getMasteryPoints' => 0,
+'[C]App%5CEntity%5CTop3Champions%23getMasteryPoints' => 1,
+'App%5CEntity%5CTop3Champions%23setMasteryPoints' => 0,
+'[C]App%5CEntity%5CTop3Champions%23setMasteryPoints' => 1,
+'App%5CEntity%5CTop3Champions%23getChampionId' => 0,
+'[C]App%5CEntity%5CTop3Champions%23getChampionId' => 1,
+'App%5CEntity%5CTop3Champions%23setChampionId' => 0,
+'[C]App%5CEntity%5CTop3Champions%23setChampionId' => 1,
+'App%5CEntity%5CTop3Champions%24id' => 18,
+'[C]App%5CEntity%5CTop3Champions%24id' => 1,
+'App%5CEntity%5CTop3Champions%24chamopionName' => 20,
+'[C]App%5CEntity%5CTop3Champions%24chamopionName' => 1,
+'App%5CEntity%5CTop3Champions%24masteryLevel' => 19,
+'[C]App%5CEntity%5CTop3Champions%24masteryLevel' => 1,
+'App%5CEntity%5CTop3Champions%24masteryPoints' => 19,
+'[C]App%5CEntity%5CTop3Champions%24masteryPoints' => 1,
+'App%5CEntity%5CTop3Champions%24championId' => 19,
+'[C]App%5CEntity%5CTop3Champions%24championId' => 1,
+'App%5CEntity%5CUser' => 28,
+'[C]App%5CEntity%5CUser' => 1,
+'App%5CEntity%5CUser%23__construct' => 0,
+'[C]App%5CEntity%5CUser%23__construct' => 1,
+'App%5CEntity%5CUser%23getId' => 0,
+'[C]App%5CEntity%5CUser%23getId' => 1,
+'App%5CEntity%5CUser%23getSummonerId' => 0,
+'[C]App%5CEntity%5CUser%23getSummonerId' => 1,
+'App%5CEntity%5CUser%23setSummonerId' => 0,
+'[C]App%5CEntity%5CUser%23setSummonerId' => 1,
+'App%5CEntity%5CUser%23getAccountId' => 0,
+'[C]App%5CEntity%5CUser%23getAccountId' => 1,
+'App%5CEntity%5CUser%23setAccountId' => 0,
+'[C]App%5CEntity%5CUser%23setAccountId' => 1,
+'App%5CEntity%5CUser%23getPuuid' => 0,
+'[C]App%5CEntity%5CUser%23getPuuid' => 1,
+'App%5CEntity%5CUser%23setPuuid' => 0,
+'[C]App%5CEntity%5CUser%23setPuuid' => 1,
+'App%5CEntity%5CUser%23getSummonerName' => 0,
+'[C]App%5CEntity%5CUser%23getSummonerName' => 1,
+'App%5CEntity%5CUser%23setSummonerName' => 0,
+'[C]App%5CEntity%5CUser%23setSummonerName' => 1,
+'App%5CEntity%5CUser%23getPassword' => 0,
+'[C]App%5CEntity%5CUser%23getPassword' => 1,
+'App%5CEntity%5CUser%23setPassword' => 0,
+'[C]App%5CEntity%5CUser%23setPassword' => 1,
+'App%5CEntity%5CUser%23getItemSet' => 0,
+'[C]App%5CEntity%5CUser%23getItemSet' => 1,
+'App%5CEntity%5CUser%23addItemSet' => 0,
+'[C]App%5CEntity%5CUser%23addItemSet' => 1,
+'App%5CEntity%5CUser%23removeItemSet' => 0,
+'[C]App%5CEntity%5CUser%23removeItemSet' => 1,
+'App%5CEntity%5CUser%24id' => 18,
+'[C]App%5CEntity%5CUser%24id' => 1,
+'App%5CEntity%5CUser%24summonerId' => 20,
+'[C]App%5CEntity%5CUser%24summonerId' => 1,
+'App%5CEntity%5CUser%24accountId' => 20,
+'[C]App%5CEntity%5CUser%24accountId' => 1,
+'App%5CEntity%5CUser%24puuid' => 20,
+'[C]App%5CEntity%5CUser%24puuid' => 1,
+'App%5CEntity%5CUser%24summonerName' => 20,
+'[C]App%5CEntity%5CUser%24summonerName' => 1,
+'App%5CEntity%5CUser%24password' => 20,
+'[C]App%5CEntity%5CUser%24password' => 1,
+'App%5CEntity%5CUser%24ItemSet' => 29,
+'[C]App%5CEntity%5CUser%24ItemSet' => 1,
+'App%5CEntity%5CUserStats' => 30,
+'[C]App%5CEntity%5CUserStats' => 1,
+'App%5CEntity%5CUserStats%23getId' => 0,
+'[C]App%5CEntity%5CUserStats%23getId' => 1,
+'App%5CEntity%5CUserStats%23getSummonerLevel' => 0,
+'[C]App%5CEntity%5CUserStats%23getSummonerLevel' => 1,
+'App%5CEntity%5CUserStats%23setSummonerLevel' => 0,
+'[C]App%5CEntity%5CUserStats%23setSummonerLevel' => 1,
+'App%5CEntity%5CUserStats%23getWins' => 0,
+'[C]App%5CEntity%5CUserStats%23getWins' => 1,
+'App%5CEntity%5CUserStats%23setWins' => 0,
+'[C]App%5CEntity%5CUserStats%23setWins' => 1,
+'App%5CEntity%5CUserStats%23getLoses' => 0,
+'[C]App%5CEntity%5CUserStats%23getLoses' => 1,
+'App%5CEntity%5CUserStats%23setLoses' => 0,
+'[C]App%5CEntity%5CUserStats%23setLoses' => 1,
+'App%5CEntity%5CUserStats%23getLeaguePoints' => 0,
+'[C]App%5CEntity%5CUserStats%23getLeaguePoints' => 1,
+'App%5CEntity%5CUserStats%23setLeaguePoints' => 0,
+'[C]App%5CEntity%5CUserStats%23setLeaguePoints' => 1,
+'App%5CEntity%5CUserStats%23getRank' => 0,
+'[C]App%5CEntity%5CUserStats%23getRank' => 1,
+'App%5CEntity%5CUserStats%23setRank' => 0,
+'[C]App%5CEntity%5CUserStats%23setRank' => 1,
+'App%5CEntity%5CUserStats%23getRankTier' => 0,
+'[C]App%5CEntity%5CUserStats%23getRankTier' => 1,
+'App%5CEntity%5CUserStats%23setRankTier' => 0,
+'[C]App%5CEntity%5CUserStats%23setRankTier' => 1,
+'App%5CEntity%5CUserStats%23getUserId' => 0,
+'[C]App%5CEntity%5CUserStats%23getUserId' => 1,
+'App%5CEntity%5CUserStats%23setUserId' => 0,
+'[C]App%5CEntity%5CUserStats%23setUserId' => 1,
+'App%5CEntity%5CUserStats%24id' => 18,
+'[C]App%5CEntity%5CUserStats%24id' => 1,
+'App%5CEntity%5CUserStats%24summonerLevel' => 19,
+'[C]App%5CEntity%5CUserStats%24summonerLevel' => 1,
+'App%5CEntity%5CUserStats%24wins' => 19,
+'[C]App%5CEntity%5CUserStats%24wins' => 1,
+'App%5CEntity%5CUserStats%24loses' => 19,
+'[C]App%5CEntity%5CUserStats%24loses' => 1,
+'App%5CEntity%5CUserStats%24leaguePoints' => 19,
+'[C]App%5CEntity%5CUserStats%24leaguePoints' => 1,
+'App%5CEntity%5CUserStats%24rank' => 20,
+'[C]App%5CEntity%5CUserStats%24rank' => 1,
+'App%5CEntity%5CUserStats%24rankTier' => 20,
+'[C]App%5CEntity%5CUserStats%24rankTier' => 1,
+'App%5CEntity%5CUserStats%24userId' => 19,
+'[C]App%5CEntity%5CUserStats%24userId' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer' => 0,
@@ -505,34 +829,34 @@ return [[
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__construct' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__construct' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__construct' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23redirectAction' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23redirectAction' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23redirectAction' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23urlRedirectAction' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23urlRedirectAction' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23urlRedirectAction' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__invoke' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__invoke' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__invoke' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24router' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24router' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24router' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpPort' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpPort' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpPort' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpsPort' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpsPort' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%24httpsPort' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__construct' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__construct' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__construct' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23templateAction' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23templateAction' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23templateAction' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__invoke' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__invoke' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%23__invoke' => 31,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%24twig' => 0,
-'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%24twig' => 1,
+'[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CTemplateController%24twig' => 31,
 
 ], [
 
 0 => [],
-1 => 1638266750,
+1 => 1638744633,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -577,5 +901,578 @@ return [[
         []
     );
 },
+4 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/live-match/{summonerName}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+5 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/game-history/{summonerName}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+6 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/game-details/{gameId}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+7 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/user-data/{summonerName}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+8 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/store-items',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+9 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/store-champions',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+10 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/last-games-stats/{summonerName}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+11 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/login',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+12 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/signup',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+13 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/create-itemset',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+14 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/delete-itemset',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+15 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/get-champion-itemset/{summonerName}/{championId}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+16 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/get-all-itemset/{summonerName}',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+17 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\ChampionRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+18 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
+            clone ($p['Doctrine\\ORM\\Mapping\\GeneratedValue'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\GeneratedValue')),
+            clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    2 => 'integer',
+                ],
+                'precision' => [
+                    2 => null,
+                ],
+                'scale' => [
+                    2 => null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+            $o[2],
+        ],
+        []
+    );
+},
+19 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'integer',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+20 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'string',
+                ],
+                'length' => [
+                    255,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+21 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'champion',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\ItemSet',
+                ],
+                'orphanRemoval' => [
+                    true,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+22 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\ItemSetRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+23 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+            clone ($p['Doctrine\\ORM\\Mapping\\JoinColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\JoinColumn')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\User',
+                ],
+                'inversedBy' => [
+                    'ItemSet',
+                ],
+                'nullable' => [
+                    1 => false,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+        ],
+        []
+    );
+},
+24 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+            clone ($p['Doctrine\\ORM\\Mapping\\JoinColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\JoinColumn')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\Champion',
+                ],
+                'inversedBy' => [
+                    'itemSet',
+                ],
+                'nullable' => [
+                    1 => false,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+        ],
+        []
+    );
+},
+25 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'text',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+26 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\ItemsRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+27 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\Top3ChampionsRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+28 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\UserRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+29 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\ItemSet',
+                ],
+                'orphanRemoval' => [
+                    true,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+30 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\UserStatsRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+31 => 1638744634,
 
 ]];

@@ -5,5 +5,18 @@
 return [
     'default' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], []],
     'error' => [[], ['_controller' => 'App\\Controller\\DefaultController::error'], [], [['text', '/error']], [], []],
+    'app_default_livematch' => [['summonerName'], ['_controller' => 'App\\Controller\\DefaultController::liveMatch'], [], [['variable', '/', '[^/]++', 'summonerName', true], ['text', '/live-match']], [], []],
+    'app_default_gamehistory' => [['summonerName'], ['_controller' => 'App\\Controller\\DefaultController::gameHistory'], [], [['variable', '/', '[^/]++', 'summonerName', true], ['text', '/game-history']], [], []],
+    'app_default_gamedetails' => [['gameId'], ['_controller' => 'App\\Controller\\DefaultController::gameDetails'], [], [['variable', '/', '[^/]++', 'gameId', true], ['text', '/game-details']], [], []],
+    'app_default_userdata' => [['summonerName'], ['_controller' => 'App\\Controller\\DefaultController::userData'], [], [['variable', '/', '[^/]++', 'summonerName', true], ['text', '/user-data']], [], []],
+    'app_default_storeitems' => [[], ['_controller' => 'App\\Controller\\DefaultController::storeItems'], [], [['text', '/store-items']], [], []],
+    'app_default_storechampions' => [[], ['_controller' => 'App\\Controller\\DefaultController::storeChampions'], [], [['text', '/store-champions']], [], []],
+    'app_default_lastgamesstats' => [['summonerName'], ['_controller' => 'App\\Controller\\DefaultController::lastGamesStats'], [], [['variable', '/', '[^/]++', 'summonerName', true], ['text', '/last-games-stats']], [], []],
+    'app_default_login' => [[], ['_controller' => 'App\\Controller\\DefaultController::login'], [], [['text', '/login']], [], []],
+    'app_default_signup' => [[], ['_controller' => 'App\\Controller\\DefaultController::signup'], [], [['text', '/signup']], [], []],
+    'app_default_createitemset' => [[], ['_controller' => 'App\\Controller\\DefaultController::createItemset'], [], [['text', '/create-itemset']], [], []],
+    'app_default_deleteitemset' => [[], ['_controller' => 'App\\Controller\\DefaultController::deleteItemset'], [], [['text', '/delete-itemset']], [], []],
+    'app_default_getchampionitemset' => [['summonerName', 'championId'], ['_controller' => 'App\\Controller\\DefaultController::getChampionItemset'], [], [['variable', '/', '[^/]++', 'championId', true], ['variable', '/', '[^/]++', 'summonerName', true], ['text', '/get-champion-itemset']], [], []],
+    'app_default_getallitemsets' => [['summonerName'], ['_controller' => 'App\\Controller\\DefaultController::getAllItemsets'], [], [['variable', '/', '[^/]++', 'summonerName', true], ['text', '/get-all-itemset']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
 ];

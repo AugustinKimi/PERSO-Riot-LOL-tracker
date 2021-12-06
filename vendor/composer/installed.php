@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-develop',
-    'version' => 'dev-develop',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
-    'reference' => 'dc827bde2430066f7301b59a9795b6f90c6ca803',
+    'reference' => NULL,
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => 'dev-develop',
-      'version' => 'dev-develop',
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'dc827bde2430066f7301b59a9795b6f90c6ca803',
+      'reference' => NULL,
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -190,6 +190,15 @@
       array (
       ),
       'reference' => 'bb324850d09dd437b6acb142c13e64fdc725b0e1',
+    ),
+    'nelmio/cors-bundle' => 
+    array (
+      'pretty_version' => '2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0ee5ee30b0ee08ea122d431ae6e0ddeb87f035c0',
     ),
     'nikic/php-parser' => 
     array (

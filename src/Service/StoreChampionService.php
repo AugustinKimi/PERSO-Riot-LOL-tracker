@@ -64,7 +64,7 @@ class StoreChampionService{
 
             $storeChampion  = new Champion();
             $storeChampion
-                ->setChaampionName($champion["name"])
+                ->setChampionName($champion["name"])
                 ->setChampionId($champion["key"]);
 
             $this->entityManager->persist($storeChampion);

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ChampionRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,7 +27,17 @@ class Champion
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $chaampionName;
+    private $championName;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ItemSet::class, mappedBy="champion", orphanRemoval=true)
+     */
+    private $itemSet;
+
+    public function __construct()
+    {
+        $this->itemSet = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -44,14 +56,44 @@ class Champion
         return $this;
     }
 
-    public function getChaampionName(): ?string
+    public function getChampionName(): ?string
     {
-        return $this->chaampionName;
+        return $this->championName;
     }
 
-    public function setChaampionName(string $chaampionName): self
+    public function setChampionName(string $championName): self
     {
-        $this->chaampionName = $chaampionName;
+        $this->championName = $championName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ItemSet[]
+     */
+    public function getItemSet(): Collection
+    {
+        return $this->itemSet;
+    }
+
+    public function addItemSet(ItemSet $itemSet): self
+    {
+        if (!$this->itemSet->contains($itemSet)) {
+            $this->itemSet[] = $itemSet;
+            $itemSet->setChampion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItemSet(ItemSet $itemSet): self
+    {
+        if ($this->itemSet->removeElement($itemSet)) {
+            // set the owning side to null (unless already changed)
+            if ($itemSet->getChampion() === $this) {
+                $itemSet->setChampion(null);
+            }
+        }
 
         return $this;
     }

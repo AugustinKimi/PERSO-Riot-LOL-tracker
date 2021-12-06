@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\ItemSetService;
 use App\Service\Last10GamesStatsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,6 +62,11 @@ class DefaultController extends AbstractController
      */
     private $login;
 
+    /**
+     * @var ItemSetService
+     */
+    private $itemSet;
+
     public function __construct(
         LiveMatchService $liveMatchService,
         UserGameHistoryService $userGameHistory,
@@ -69,7 +75,8 @@ class DefaultController extends AbstractController
         StoreChampionService $storeChampion,
         Last10GamesStatsService $lastGames,
         SignUpService $signUp,
-        LoginService $login
+        LoginService $login,
+        ItemSetService $itemSet
         )
     {
         $this->liveMatchService = $liveMatchService;
@@ -80,6 +87,7 @@ class DefaultController extends AbstractController
         $this->lastGames = $lastGames;
         $this->signUp = $signUp;
         $this->login = $login;
+        $this->itemSet = $itemSet;
     }
 
     /**
@@ -119,6 +127,17 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/game-details/{gameId}")
+     */
+
+    public function gameDetails(string $gameId): Response
+    {   
+        $gameHistory = $this->userGameHistory->getMatchDetails($gameId);
+
+        return $this->json($gameHistory);
+    }
+
+    /**
      * @Route("/user-data/{summonerName}")
      */
 
@@ -128,7 +147,18 @@ class DefaultController extends AbstractController
         $userData = $this->userData->getUserData($userIds['id']);
         $userChampionsData = $this->userData->getUserChampionData($userIds['id']);
 
-        return $this->json(array_merge($userData, $userChampionsData));
+        return $this->json(array_merge($userData, $userChampionsData, ["userData" => $userIds]));
+    }
+
+     /**
+     * @Route("/user-exist/{summonerName}")
+     */
+
+    public function userExist(string $summonerName): Response
+    {   
+        $userExist = $this->userData->userExist($summonerName);
+
+        return $this->json($userExist);
     }
 
     /**
@@ -184,5 +214,52 @@ class DefaultController extends AbstractController
         // return $this->json($response);
         return $this->json($response);
     }
+
+    /**
+     * @Route("/create-itemset")
+     */
+
+    public function createItemset(Request $request): Response
+    {   
+        $params = json_decode($request->getContent(), true);
+        $itemSetResponse = $this->itemSet->createItemset(
+            $params["items"],
+            $params["summonerName"],
+            $params["championId"],
+            $params["description"],
+            $params["name"],
+        );
+        return $this->json($itemSetResponse);
+    }
+
+    /**
+     * @Route("/delete-itemset")
+     */
+
+    public function deleteItemset(Request $request): Response
+    {   
+        $params = json_decode($request->getContent(), true);
+        return $this->json($params);
+    }
+
+     /**
+     * @Route("/get-champion-itemset/{summonerName}/{championId}")
+     */
+
+    public function getChampionItemset($summonerName, $championId): Response
+    {   
+        
+        return $this->json($summonerName);
+    }
+
+     /**
+     * @Route("/get-all-itemset/{summonerName}")
+     */
+
+    public function getAllItemsets($summonerName): Response
+    {   
+        
+        return $this->json($summonerName);
+    } 
 
 }

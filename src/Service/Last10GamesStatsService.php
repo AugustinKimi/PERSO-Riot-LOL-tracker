@@ -4,6 +4,7 @@
 namespace App\Service;
 
 use App\Service\UserGameHistoryService;
+use Symfony\Component\HttpClient\Chunk\LastChunk;
 
 class Last10GamesStatsService{
 
@@ -22,7 +23,12 @@ class Last10GamesStatsService{
 
 
     public function getStats($summonerName){
-        $lastMatchs = $this->userGameHistory->getUserGameHistory($summonerName);
+        $lastMatchsId = $this->userGameHistory->getAllHistoryData($summonerName);
+        $lastMatchs = [];
+        foreach ($lastMatchsId as $matchId) {
+            $lastMatchs[] = $this->userGameHistory->getMatchDetails($matchId);
+        }
+
         $wins = 0;
         $loses = 0;
         $lanes = [];
@@ -99,10 +105,6 @@ class Last10GamesStatsService{
                 if($item["win"]) $newArray[$item["name"]]["winCount"] += 1 ;
             }
             else {
-                // $newArray[$item["name"]]["count"] = 1;
-                // $newArray[$item["name"]]["cs"] = $item["cs"] ;
-                // if($item["win"]) $newArray[$item["name"]]["winCount"] = 1;
-                // else  $newArray[$item["name"]]["winCount"] = 0;
                 if($item['win']) $newArray[$item["name"]] = array_merge(
                     $item, [
                     "averageCs" =>  $item["cs"],

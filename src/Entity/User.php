@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,16 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ItemSet::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $ItemSet;
+
+    public function __construct()
+    {
+        $this->ItemSet = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -103,6 +115,36 @@ class User
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ItemSet[]
+     */
+    public function getItemSet(): Collection
+    {
+        return $this->ItemSet;
+    }
+
+    public function addItemSet(ItemSet $itemSet): self
+    {
+        if (!$this->ItemSet->contains($itemSet)) {
+            $this->ItemSet[] = $itemSet;
+            $itemSet->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItemSet(ItemSet $itemSet): self
+    {
+        if ($this->ItemSet->removeElement($itemSet)) {
+            // set the owning side to null (unless already changed)
+            if ($itemSet->getUser() === $this) {
+                $itemSet->setUser(null);
+            }
+        }
 
         return $this;
     }

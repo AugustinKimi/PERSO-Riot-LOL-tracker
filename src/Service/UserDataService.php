@@ -3,6 +3,9 @@
 
 namespace App\Service;
 
+use App\Entity\Champion;
+use Doctrine\DBAL\Driver\Mysqli\Initializer\Charset;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -18,13 +21,20 @@ class UserDataService{
      */
     private $parameterBag;
 
+     /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
+
     public function __construct(
         HttpClientInterface $httpClient,
-        ParameterBagInterface $parameterBag
+        ParameterBagInterface $parameterBag,
+        EntityManagerInterface $entityManager
     )
     {
         $this->parameterBag = $parameterBag;
         $this->httpClient = $httpClient;
+        $this->entityManager = $entityManager;
         
     }
 
@@ -83,8 +93,10 @@ class UserDataService{
         }
 
         $userDataArray = $userData->toArray();
+        foreach ($userDataArray as $user) {
+            if($user["queueType"] == "RANKED_SOLO_5x5") return [ "leagueData" => $user];
+        }
 
-        return $userDataArray;
     }
 
     public function getUserChampionData(string $summonerId){
@@ -102,8 +114,24 @@ class UserDataService{
         if($userData->getStatusCode() != 200) {
             return ["success" => false];
         }
-        $userChampionDataArray = $userData->toArray();
 
-        return $userChampionDataArray;
+        $champion1 = $this->entityManager->getRepository(Champion::class)->findOneByChampionId($userData->toArray()[0]["championId"]);
+        $champion2 = $this->entityManager->getRepository(Champion::class)->findOneByChampionId($userData->toArray()[1]["championId"]);
+        $champion3 = $this->entityManager->getRepository(Champion::class)->findOneByChampionId($userData->toArray()[2]["championId"]);
+
+        $championArray1 = $userData->toArray()[0];
+        $championArray2 = $userData->toArray()[1];
+        $championArray3 = $userData->toArray()[2];
+
+        $championArray1["championName"] = $champion1->getChampionName();
+        $championArray2["championName"] = $champion2->getChampionName();
+        $championArray3["championName"] = $champion3->getChampionName();
+        $userChampionDataArray = [
+            $championArray2,
+            $championArray1,
+            $championArray3
+        ];
+
+        return ["championsData" => $userChampionDataArray];
     }
 }

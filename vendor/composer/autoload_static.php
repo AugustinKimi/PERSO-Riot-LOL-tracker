@@ -67,6 +67,10 @@ class ComposerStaticInita4d5f717a72d7d0f154766d7a01f0272
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
         ),
+        'N' => 
+        array (
+            'Nelmio\\CorsBundle\\' => 18,
+        ),
         'L' => 
         array (
             'Laminas\\Code\\' => 13,
@@ -265,6 +269,10 @@ class ComposerStaticInita4d5f717a72d7d0f154766d7a01f0272
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
+        'Nelmio\\CorsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/cors-bundle',
+        ),
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
@@ -343,8 +351,29 @@ class ComposerStaticInita4d5f717a72d7d0f154766d7a01f0272
 
     public static $classMap = array (
         'App\\Controller\\DefaultController' => __DIR__ . '/../..' . '/src/Controller/DefaultController.php',
+        'App\\Entity\\Champion' => __DIR__ . '/../..' . '/src/Entity/Champion.php',
+        'App\\Entity\\ItemSet' => __DIR__ . '/../..' . '/src/Entity/ItemSet.php',
+        'App\\Entity\\Items' => __DIR__ . '/../..' . '/src/Entity/Items.php',
+        'App\\Entity\\Top3Champions' => __DIR__ . '/../..' . '/src/Entity/Top3Champions.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Entity\\UserStats' => __DIR__ . '/../..' . '/src/Entity/UserStats.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\ChampionRepository' => __DIR__ . '/../..' . '/src/Repository/ChampionRepository.php',
+        'App\\Repository\\ItemSetRepository' => __DIR__ . '/../..' . '/src/Repository/ItemSetRepository.php',
+        'App\\Repository\\ItemsRepository' => __DIR__ . '/../..' . '/src/Repository/ItemsRepository.php',
+        'App\\Repository\\Top3ChampionsRepository' => __DIR__ . '/../..' . '/src/Repository/Top3ChampionsRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
+        'App\\Repository\\UserStatsRepository' => __DIR__ . '/../..' . '/src/Repository/UserStatsRepository.php',
+        'App\\Service\\ItemSetService' => __DIR__ . '/../..' . '/src/Service/ItemSetService.php',
+        'App\\Service\\Last10GamesStatsService' => __DIR__ . '/../..' . '/src/Service/Last10GamesStatsService.php',
+        'App\\Service\\LiveMatchService' => __DIR__ . '/../..' . '/src/Service/LiveMatchService.php',
+        'App\\Service\\LoginService' => __DIR__ . '/../..' . '/src/Service/LoginService.php',
         'App\\Service\\NotionService' => __DIR__ . '/../..' . '/src/Service/NotionService.php',
+        'App\\Service\\SignUpService' => __DIR__ . '/../..' . '/src/Service/SignUpService.php',
+        'App\\Service\\StoreChampionService' => __DIR__ . '/../..' . '/src/Service/StoreChampionService.php',
+        'App\\Service\\StoreItemsService' => __DIR__ . '/../..' . '/src/Service/StoreItemsService.php',
+        'App\\Service\\UserDataService' => __DIR__ . '/../..' . '/src/Service/UserDataService.php',
+        'App\\Service\\UserGameHistoryService' => __DIR__ . '/../..' . '/src/Service/UserGameHistoryService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Attribute\\AsEntityListener' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Attribute/AsEntityListener.php',
@@ -1489,6 +1518,16 @@ class ComposerStaticInita4d5f717a72d7d0f154766d7a01f0272
         'Laminas\\Code\\Reflection\\PropertyReflection' => __DIR__ . '/..' . '/laminas/laminas-code/src/Reflection/PropertyReflection.php',
         'Laminas\\Code\\Reflection\\ReflectionInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Reflection/ReflectionInterface.php',
         'Laminas\\Code\\Scanner\\DocBlockScanner' => __DIR__ . '/..' . '/laminas/laminas-code/src/Scanner/DocBlockScanner.php',
+        'Nelmio\\CorsBundle\\DependencyInjection\\Compiler\\CorsConfigurationProviderPass' => __DIR__ . '/..' . '/nelmio/cors-bundle/DependencyInjection/Compiler/CorsConfigurationProviderPass.php',
+        'Nelmio\\CorsBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/nelmio/cors-bundle/DependencyInjection/Configuration.php',
+        'Nelmio\\CorsBundle\\DependencyInjection\\NelmioCorsExtension' => __DIR__ . '/..' . '/nelmio/cors-bundle/DependencyInjection/NelmioCorsExtension.php',
+        'Nelmio\\CorsBundle\\EventListener\\CacheableResponseVaryListener' => __DIR__ . '/..' . '/nelmio/cors-bundle/EventListener/CacheableResponseVaryListener.php',
+        'Nelmio\\CorsBundle\\EventListener\\CorsListener' => __DIR__ . '/..' . '/nelmio/cors-bundle/EventListener/CorsListener.php',
+        'Nelmio\\CorsBundle\\NelmioCorsBundle' => __DIR__ . '/..' . '/nelmio/cors-bundle/NelmioCorsBundle.php',
+        'Nelmio\\CorsBundle\\Options\\ConfigProvider' => __DIR__ . '/..' . '/nelmio/cors-bundle/Options/ConfigProvider.php',
+        'Nelmio\\CorsBundle\\Options\\ProviderInterface' => __DIR__ . '/..' . '/nelmio/cors-bundle/Options/ProviderInterface.php',
+        'Nelmio\\CorsBundle\\Options\\Resolver' => __DIR__ . '/..' . '/nelmio/cors-bundle/Options/Resolver.php',
+        'Nelmio\\CorsBundle\\Options\\ResolverInterface' => __DIR__ . '/..' . '/nelmio/cors-bundle/Options/ResolverInterface.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'PackageVersions\\FallbackVersions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
         'PackageVersions\\Installer' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Installer.php',
